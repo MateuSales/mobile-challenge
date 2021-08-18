@@ -4,7 +4,7 @@ protocol Service {
     func get<T: Decodable>(api: API, callback: @escaping (Result<T, CustomError>) -> Void)
 }
 
-final class ListConsumer: Service {
+final class Consumer: Service {
 
     func get<T: Decodable>(api: API, callback: @escaping (Result<T, CustomError>) -> Void) {
         guard let url = api.createUrl() else {

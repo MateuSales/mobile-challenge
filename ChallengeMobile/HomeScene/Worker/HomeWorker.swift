@@ -2,7 +2,7 @@ final class HomeWorker {
 
     private let service: Service
 
-    init(service: Service = ListConsumer()) {
+    init(service: Service = Consumer()) {
         self.service = service
     }
 
