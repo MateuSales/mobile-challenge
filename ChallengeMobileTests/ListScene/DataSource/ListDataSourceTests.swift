@@ -11,6 +11,17 @@ class ListDataSourceTests: XCTestCase {
         XCTAssertEqual(numberOfRows, 2)
     }
     
+    func test_tableviewCellForRowAt_rendersCorrectCell() {
+        let viewModel = someViewModel()
+        let (sut, _) = makeSUT(viewModel: viewModel)
+        
+        let cell = sut.tableView(dummyTableview(), cellForRowAt: indexPath()) as? ListCurrencyCell
+        
+        XCTAssertNotNil(cell)
+        XCTAssertEqual(cell?.titleLabel.text, viewModel.currencies.first?.initials)
+        XCTAssertEqual(cell?.descriptionLabel.text, viewModel.currencies.first?.description)
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(viewModel: ListViewModel) -> (ListDataSource, DelegateSpy) {
@@ -34,11 +45,14 @@ class ListDataSourceTests: XCTestCase {
     
     private func someViewModel() -> ListViewModel {
         let currencyOne = ListViewModel.Currency(initials: "EUR", description: "Euro")
-        let currencyTwo = ListViewModel.Currency(initials: "BIT", description: "Bitcoin")
-        return ListViewModel(currencies: [currencyOne, currencyTwo])
+        return ListViewModel(currencies: [currencyOne])
     }
     
     private func dummyTableview() -> UITableView {
         return UITableView()
+    }
+    
+    private func indexPath() -> IndexPath {
+        return IndexPath(row: 0, section: 0)
     }
 }
