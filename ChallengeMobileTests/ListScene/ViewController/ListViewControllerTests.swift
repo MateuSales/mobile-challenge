@@ -4,9 +4,7 @@ import XCTest
 class ListViewControllerTests: XCTestCase {
 
     func test_viewDidAppear_callsDelegateCorrectly() {
-        let delegateSpy = DelegateSpy()
-        let sut = ListViewController(delegate: delegateSpy,
-                                     title: "any title")
+        let (sut, delegateSpy) = makeSUT()
 
         sut.viewDidAppear(anyFlag())
 
@@ -14,7 +12,13 @@ class ListViewControllerTests: XCTestCase {
     }
 
     // MARK: - Helpers
-
+    
+    private func makeSUT() -> (ListViewController, DelegateSpy) {
+        let delegateSpy = DelegateSpy()
+        let sut = ListViewController(delegate: delegateSpy, title: "any title")
+        
+        return (sut, delegateSpy)
+    }
     private class DelegateSpy: ListViewControllerDelegate {
         enum Message {
             case viewDidAppear
