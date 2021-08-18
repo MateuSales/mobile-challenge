@@ -11,7 +11,7 @@ class ListDataSourceTests: XCTestCase {
         XCTAssertEqual(numberOfRows, 2)
     }
     
-    func test_tableviewCellForRowAt_rendersCorrectCell() {
+    func test_tableviewCellForRowAt_rendersCellCorrectly() {
         let viewModel = someViewModel()
         let (sut, _) = makeSUT(viewModel: viewModel)
         
@@ -20,6 +20,16 @@ class ListDataSourceTests: XCTestCase {
         XCTAssertNotNil(cell)
         XCTAssertEqual(cell?.titleLabel.text, viewModel.currencies.first?.initials)
         XCTAssertEqual(cell?.descriptionLabel.text, viewModel.currencies.first?.description)
+    }
+    
+    func test_tableviewDidSelectRowAt_callsDelegateCorrectly() {
+        let viewModel = someViewModel()
+        let (sut, delegateSpy) = makeSUT(viewModel: viewModel)
+        let expectedInitials = viewModel.currencies[indexPath().row].initials
+        
+        sut.tableView(dummyTableview(), didSelectRowAt: indexPath())
+        
+        XCTAssertEqual(delegateSpy.messages, [.didTapOption(initials: expectedInitials)])
     }
     
     // MARK: - Helpers
