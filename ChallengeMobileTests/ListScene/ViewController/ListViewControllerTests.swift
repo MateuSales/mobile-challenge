@@ -18,6 +18,14 @@ class ListViewControllerTests: XCTestCase {
         
         XCTAssertEqual(delegateSpy.messages, [.searchBarTextDidBeginEditing("text")])
     }
+    
+    func test_searchBarCancelButtonClicked_callsDelegateCorrectly() {
+        let (sut, delegateSpy) = makeSUT()
+        
+        sut.searchBarCancelButtonClicked(dummySearchBar())
+        
+        XCTAssertEqual(delegateSpy.messages, [.cancelButtonPressed])
+    }
 
     // MARK: - Helpers
     
@@ -32,6 +40,7 @@ class ListViewControllerTests: XCTestCase {
         enum Message: Equatable {
             case viewDidAppear
             case searchBarTextDidBeginEditing(_ text: String)
+            case cancelButtonPressed
         }
 
         var messages: [Message] = []
@@ -44,7 +53,9 @@ class ListViewControllerTests: XCTestCase {
             messages.append(.searchBarTextDidBeginEditing(text))
         }
 
-        func cancelButtonPressed() { }
+        func cancelButtonPressed() {
+            messages.append(.cancelButtonPressed)
+        }
     }
 
     private func anyFlag() -> Bool {
