@@ -6,7 +6,8 @@ protocol HomeContract: AnyObject {
 
 final class HomeComposer {
     static func start(delegate: HomeContract) -> UIViewController {
-        let worker = HomeWorker()
+        let consumer = Consumer()
+        let worker = HomeWorker(service: consumer)
         let adapter = HomeAdapter(worker: worker)
         let homeController = HomeViewController(delegate: adapter, title: "Home")
         adapter.viewController = homeController
