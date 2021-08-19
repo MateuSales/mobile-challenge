@@ -1,4 +1,8 @@
-final class ListWorker {
+protocol ListWorkerProtocol: AnyObject {
+    func getList(callback: @escaping (ListModel?) -> Void)
+}
+
+final class ListWorker: ListWorkerProtocol {
 
     private let service: Service
 

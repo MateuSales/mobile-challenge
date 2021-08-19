@@ -2,11 +2,11 @@ import Foundation
 
 final class ListAdapter {
     weak var viewController: ListViewController?
-    private let worker: ListWorker
+    private let worker: ListWorkerProtocol
     private var model: ListModel?
     weak var delegate: ListContract?
 
-    init(worker: ListWorker) {
+    init(worker: ListWorkerProtocol) {
         self.worker = worker
     }
 

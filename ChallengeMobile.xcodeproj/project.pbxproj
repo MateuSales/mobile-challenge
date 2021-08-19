@@ -10,6 +10,7 @@
 		6095D53A26CCA875008218A2 /* ListDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6095D53926CCA875008218A2 /* ListDataSourceTests.swift */; };
 		6095D53D26CCAE31008218A2 /* ListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6095D53C26CCAE31008218A2 /* ListPresenterTests.swift */; };
 		6095D54026CDD934008218A2 /* ListCurrencyCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6095D53F26CDD934008218A2 /* ListCurrencyCellTests.swift */; };
+		6095D54326CDDBB0008218A2 /* ListAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6095D54226CDDBB0008218A2 /* ListAdapterTests.swift */; };
 		827FCDE126BB58F7008EF24D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827FCDE026BB58F7008EF24D /* AppDelegate.swift */; };
 		827FCDE326BB58F7008EF24D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827FCDE226BB58F7008EF24D /* SceneDelegate.swift */; };
 		827FCDE526BB58F7008EF24D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827FCDE426BB58F7008EF24D /* ListViewController.swift */; };
@@ -69,6 +70,7 @@
 		6095D53926CCA875008218A2 /* ListDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataSourceTests.swift; sourceTree = "<group>"; };
 		6095D53C26CCAE31008218A2 /* ListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterTests.swift; sourceTree = "<group>"; };
 		6095D53F26CDD934008218A2 /* ListCurrencyCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCurrencyCellTests.swift; sourceTree = "<group>"; };
+		6095D54226CDDBB0008218A2 /* ListAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAdapterTests.swift; sourceTree = "<group>"; };
 		827FCDDD26BB58F7008EF24D /* ChallengeMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		827FCDE026BB58F7008EF24D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		827FCDE226BB58F7008EF24D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,14 @@
 				6095D53F26CDD934008218A2 /* ListCurrencyCellTests.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6095D54126CDDB9F008218A2 /* Composition */ = {
+			isa = PBXGroup;
+			children = (
+				6095D54226CDDBB0008218A2 /* ListAdapterTests.swift */,
+			);
+			path = Composition;
 			sourceTree = "<group>";
 		};
 		827FCDD426BB58F7008EF24D = {
@@ -296,6 +306,7 @@
 		827FCE2626BBC2EE008EF24D /* ListScene */ = {
 			isa = PBXGroup;
 			children = (
+				6095D54126CDDB9F008218A2 /* Composition */,
 				6095D53E26CDD925008218A2 /* View */,
 				6095D53B26CCAE12008218A2 /* Presenter */,
 				6095D53826CCA85F008218A2 /* DataSource */,
@@ -614,6 +625,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6095D54326CDDBB0008218A2 /* ListAdapterTests.swift in Sources */,
 				6095D54026CDD934008218A2 /* ListCurrencyCellTests.swift in Sources */,
 				827FCE1B26BB83C7008EF24D /* ListMapperTests.swift in Sources */,
 				827FCE1926BB8269008EF24D /* ListConsumerTests.swift in Sources */,
