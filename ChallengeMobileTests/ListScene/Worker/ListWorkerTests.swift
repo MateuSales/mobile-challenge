@@ -3,7 +3,7 @@ import XCTest
 
 class ListWorkerTests: XCTestCase {
 
-    func test_getList_callsServiceCorrectly(){
+    func test_getList_callsSConsumerCorrectly(){
         let serviceSpy = ServiceSpy()
         let sut = ListWorker(service: serviceSpy)
 
