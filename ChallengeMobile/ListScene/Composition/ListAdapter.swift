@@ -52,8 +52,7 @@ extension ListAdapter: ListViewControllerDelegate {
 
 extension ListAdapter: ListDataSourceDelegate {
     func didTapOption(initials: String) {
-        guard let viewController = viewController else { return }
-        viewController.dismiss(animated: true, completion: nil)
+        viewController?.dismiss(animated: true, completion: nil)
         delegate?.didTapOption(initials: initials)
     }
 }

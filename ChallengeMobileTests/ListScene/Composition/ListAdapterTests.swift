@@ -11,6 +11,14 @@ class ListAdapterTests: XCTestCase {
         XCTAssertEqual(workerSpy.messages, [.getList])
     }
     
+    func test_didTapOption_callsDelegateCorrectly() {
+        let (sut, _, delegateSpy) = makeSUT()
+        
+        sut.didTapOption(initials: someInitials())
+        
+        XCTAssertEqual(delegateSpy.messages, [.didTapOption(initials: someInitials())])
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT() -> (ListAdapter, ListWorkerSpy, DelegateSpy) {
@@ -35,7 +43,7 @@ class ListAdapterTests: XCTestCase {
     }
     
     private class DelegateSpy: ListContract {
-        enum Message {
+        enum Message: Equatable {
             case didTapOption(initials: String)
         }
         
@@ -44,5 +52,9 @@ class ListAdapterTests: XCTestCase {
         func didTapOption(initials: String) {
             messages.append(.didTapOption(initials: initials))
         }
+    }
+    
+    private func someInitials() -> String {
+        return "BTC"
     }
 }
