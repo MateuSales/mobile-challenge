@@ -21,6 +21,14 @@ class ListPresenterTests: XCTestCase {
         XCTAssertEqual(viewModel.currencies.first?.description, "Euro")
     }
     
+    func test_viewModel_whenTextContainsDescriptionPrefix_deliversCorrectValues() {
+        let viewModel = ListPresenter.viewModel(from: someModel(), with: "Bit")
+        
+        XCTAssertEqual(viewModel.currencies.count, 1)
+        XCTAssertEqual(viewModel.currencies.first?.initials, "BTC")
+        XCTAssertEqual(viewModel.currencies.first?.description, "Bitcoin")
+    }
+    
     // MARK: - Helpers
     
     private func someModel() -> ListModel {
