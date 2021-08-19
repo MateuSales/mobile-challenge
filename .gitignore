@@ -8,4 +8,4 @@ project.xcworkspace/
 xcuserdata/
 UserInterface.xcuserstate
 DerivedData
-*.pbxproj
+project.pbxproj
