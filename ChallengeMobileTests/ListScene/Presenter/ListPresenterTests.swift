@@ -13,6 +13,14 @@ class ListPresenterTests: XCTestCase {
         XCTAssertEqual(viewModel.currencies.last?.description, "Euro")
     }
     
+    func test_viewModel_whenTextContainsInitialsPrefix_deliversCorrectValues() {
+        let viewModel = ListPresenter.viewModel(from: someModel(), with: "EU")
+        
+        XCTAssertEqual(viewModel.currencies.count, 1)
+        XCTAssertEqual(viewModel.currencies.first?.initials, "EUR")
+        XCTAssertEqual(viewModel.currencies.first?.description, "Euro")
+    }
+    
     // MARK: - Helpers
     
     private func someModel() -> ListModel {
