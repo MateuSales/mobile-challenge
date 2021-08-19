@@ -8,7 +8,7 @@ class ListDataSourceTests: XCTestCase {
         
         let numberOfRows = sut.tableView(dummyTableview(), numberOfRowsInSection: 0)
         
-        XCTAssertEqual(numberOfRows, 2)
+        XCTAssertEqual(numberOfRows, 1)
     }
     
     func test_tableviewCellForRowAt_rendersCellCorrectly() {
