@@ -15,4 +15,17 @@ class HomePresenterTests: XCTestCase {
         XCTAssertNil(viewModel.valueInDolar)
         XCTAssertNil(viewModel.value)
     }
+    
+    func test_viewModel_whenPropertiesNotAreEmpty_deliversCorrectValues() {
+        let viewModel = HomePresenter.viewModel(initials: "BTC",
+                                                valueInDollar: "100",
+                                                convertedValue: "950.00")
+        
+        XCTAssertEqual(viewModel.firstButtonTitle, "USD")
+        XCTAssertEqual(viewModel.secondButtonTitle, "BTC")
+        XCTAssertEqual(viewModel.description, "U$ 100 em BTC é:")
+        XCTAssertEqual(viewModel.buttonTitle, "Calcular")
+        XCTAssertEqual(viewModel.valueInDolar, "100")
+        XCTAssertEqual(viewModel.value, "950.00")
+    }
 }
