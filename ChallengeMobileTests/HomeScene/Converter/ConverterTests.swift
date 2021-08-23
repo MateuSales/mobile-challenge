@@ -19,6 +19,14 @@ class ConverterTests: XCTestCase {
         XCTAssertNil(valueConverted)
     }
     
+    func test_calculate_whenModelIsNotEmpty_andQuoteIsAvailable_deliversCorrectValue() {
+        let valueConverted = Converter.calculate(model: makeModel(),
+                                                 initials: "BTC",
+                                                 valueInDollarString: "100")
+        
+        XCTAssertEqual(valueConverted, "950.00")
+    }
+    
     // MARK: - Helpers
     
     private func makeModel() -> HomeModel {
