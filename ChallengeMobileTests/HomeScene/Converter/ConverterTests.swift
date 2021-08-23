@@ -10,4 +10,20 @@ class ConverterTests: XCTestCase {
         
         XCTAssertNil(valueConverted)
     }
+    
+    func test_calculate_whenModelIsNotEmpty_andQuoteNotAvailable_deliversEmptyResult() {
+        let valueConverted = Converter.calculate(model: makeModel(),
+                                                 initials: "NGR",
+                                                 valueInDollarString: "10")
+        
+        XCTAssertNil(valueConverted)
+    }
+    
+    // MARK: - Helpers
+    
+    private func makeModel() -> HomeModel {
+        let quoteOne = HomeModel.Quote(initial: "EUR", value: 4.5)
+        let quoteTwo = HomeModel.Quote(initial: "BTC", value: 9.5)
+        return HomeModel(quotes: [quoteOne, quoteTwo])
+    }
 }
