@@ -11,6 +11,14 @@ class HomeDataSourceTests: XCTestCase {
         XCTAssertEqual(numberOfRowsInSection, 1)
     }
     
+    func test_tableviewHeightForRowAt_deliversCorrectValues() {
+        let (sut, _) = makeSUT(viewModel: someViewModel())
+        
+        let heightOfRow = sut.tableView(dummyTableview(), heightForRowAt: IndexPath(row: 0, section: 0))
+        
+        XCTAssertEqual(heightOfRow, 500)
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(viewModel: HomeViewModel) -> (sut: HomeDataSource, DelegteSpy) {
