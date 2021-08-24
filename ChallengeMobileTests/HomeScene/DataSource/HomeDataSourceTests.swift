@@ -43,6 +43,16 @@ class HomeDataSourceTests: XCTestCase {
         XCTAssertEqual(delegateSpy.messages, [.didTapSecondButton])
     }
     
+    func test_didTapCalculateButton_callsDelegateCorrectly() {
+        let viewModel = someViewModel()
+        let (sut, delegateSpy) = makeSUT(viewModel: viewModel)
+        
+        let cell = sut.tableView(dummyTableview(), cellForRowAt: IndexPath(row: 0, section: 0)) as? HomeCell
+        cell?.calculateButton.simulate(event: .touchUpInside)
+        
+        XCTAssertEqual(delegateSpy.messages, [.didTapCalculateButton])
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(viewModel: HomeViewModel) -> (sut: HomeDataSource, DelegteSpy) {
@@ -54,9 +64,9 @@ class HomeDataSourceTests: XCTestCase {
     }
     
     private class DelegteSpy: HomeDataSourceDelegate {
-        enum Message: Equatable {
+        enum Message {
             case didTapSecondButton
-            case didTapCalculateButton(initials: String, valueInDollar: String)
+            case didTapCalculateButton
         }
         
         var messages = [Message]()
@@ -66,7 +76,7 @@ class HomeDataSourceTests: XCTestCase {
         }
         
         func didTapCalculateButton(initials: String, valueInDollar: String) {
-            messages.append(.didTapCalculateButton(initials: initials, valueInDollar: valueInDollar))
+            messages.append(.didTapCalculateButton)
         }
     }
     
