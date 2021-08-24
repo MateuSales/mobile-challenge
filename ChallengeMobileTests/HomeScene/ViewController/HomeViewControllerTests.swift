@@ -11,6 +11,14 @@ class HomeViewControllerTests: XCTestCase {
         XCTAssertFalse(sut.tableView.bounces)
     }
     
+    func test_viewDidAppear_callsDelegateCorrectly() {
+        let (sut, delegateSpy) = makeSUT()
+        
+        sut.viewDidAppear(false)
+        
+        XCTAssertEqual(delegateSpy.messages, [.viewDidAppear])
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(title: String = "any title") -> (sut: HomeViewController,
