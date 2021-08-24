@@ -32,6 +32,10 @@ final class HomeViewController: StateViewController {
         super.viewDidAppear(animated)
         delegate?.viewDidAppear()
     }
+    
+    @objc func didTapRightButton() {
+        delegate?.didTapRefreshButton()
+    }
 
     private func setupNavigationButton() {
         let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh,
@@ -42,9 +46,5 @@ final class HomeViewController: StateViewController {
 
     private func configureTableView() {
         tableView.bounces = false
-    }
-
-    @objc private func didTapRightButton() {
-        delegate?.didTapRefreshButton()
     }
 }

@@ -19,6 +19,14 @@ class HomeViewControllerTests: XCTestCase {
         XCTAssertEqual(delegateSpy.messages, [.viewDidAppear])
     }
     
+    func test_didTapRightButton_callsDelegateCorrectly() {
+        let (sut, delegateSpy) = makeSUT()
+        
+        sut.didTapRightButton()
+        
+        XCTAssertEqual(delegateSpy.messages, [.didTapRefreshButton])
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(title: String = "any title") -> (sut: HomeViewController,
