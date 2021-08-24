@@ -34,6 +34,15 @@ class HomeDataSourceTests: XCTestCase {
         XCTAssertEqual(cell?.calculateButton.title(for: .normal), viewModel.buttonTitle)
     }
     
+    func test_didTapSecondButton_callsDelegateCorrectly() {
+        let (sut, delegateSpy) = makeSUT(viewModel: someViewModel())
+        
+        let cell = sut.tableView(dummyTableview(), cellForRowAt: IndexPath(row: 0, section: 0)) as? HomeCell
+        cell?.secondButton.simulate(event: .touchUpInside)
+        
+        XCTAssertEqual(delegateSpy.messages, [.didTapSecondButton])
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(viewModel: HomeViewModel) -> (sut: HomeDataSource, DelegteSpy) {
