@@ -40,4 +40,16 @@ class HomeCellTests: XCTestCase {
         XCTAssertEqual(sut.calculateButton.backgroundColor, .gray)
         XCTAssertEqual(sut.calculateButton.titleColor(for: .normal), .white)
     }
+
+    func test_tapSecondButton_sendsEventCorrectly() {
+        let sut = HomeCell()
+
+        var eventFired = false
+        sut.didTapSelectOption = {
+            eventFired = true
+        }
+        sut.secondButton.simulateTap()
+
+        XCTAssertTrue(eventFired)
+    }
 }
