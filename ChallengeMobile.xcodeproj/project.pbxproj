@@ -184,7 +184,7 @@
 			path = Composition;
 			sourceTree = "<group>";
 		};
-		6095D54426CDDFA3008218A2 /* HomeScene */ = {
+		6095D54426CDDFA3008218A2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				6095D55726D47727008218A2 /* View */,
@@ -195,7 +195,7 @@
 				6095D54826D46537008218A2 /* Validador */,
 				6095D54526CDDFBA008218A2 /* Worker */,
 			);
-			path = HomeScene;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		6095D54526CDDFBA008218A2 /* Worker */ = {
@@ -337,9 +337,9 @@
 		827FCE0826BB80FB008EF24D /* ChallengeMobileTests */ = {
 			isa = PBXGroup;
 			children = (
-				6095D54426CDDFA3008218A2 /* HomeScene */,
+				6095D54426CDDFA3008218A2 /* Home */,
 				827FCE2826BBC312008EF24D /* Network */,
-				827FCE2626BBC2EE008EF24D /* ListScene */,
+				827FCE2626BBC2EE008EF24D /* List */,
 				827FCE0B26BB80FB008EF24D /* Info.plist */,
 			);
 			path = ChallengeMobileTests;
@@ -388,7 +388,7 @@
 			path = Composition;
 			sourceTree = "<group>";
 		};
-		827FCE2626BBC2EE008EF24D /* ListScene */ = {
+		827FCE2626BBC2EE008EF24D /* List */ = {
 			isa = PBXGroup;
 			children = (
 				6095D54126CDDB9F008218A2 /* Composition */,
@@ -399,7 +399,7 @@
 				827FCE2C26BBC483008EF24D /* ViewController */,
 				827FCE2726BBC300008EF24D /* Worker */,
 			);
-			path = ListScene;
+			path = List;
 			sourceTree = "<group>";
 		};
 		827FCE2726BBC300008EF24D /* Worker */ = {
