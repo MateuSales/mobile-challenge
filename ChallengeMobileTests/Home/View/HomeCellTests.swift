@@ -52,4 +52,21 @@ class HomeCellTests: XCTestCase {
 
         XCTAssertTrue(eventFired)
     }
+
+    func test_tapCalculateButton_sendsEventCorrectly() {
+        let sut = HomeCell()
+        var initials: String?
+        var value: String?
+
+        sut.secondButton.setTitle("USD", for: .normal)
+        sut.valueTextField.text = "10"
+        sut.didTapCalculate = {
+            initials = $0
+            value = $1
+        }
+        sut.calculateButton.simulateTap()
+
+        XCTAssertEqual("USD", initials)
+        XCTAssertEqual("10", value)
+    }
 }
