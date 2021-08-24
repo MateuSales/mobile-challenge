@@ -275,9 +275,9 @@
 		827FCDDF26BB58F7008EF24D /* ChallengeMobile */ = {
 			isa = PBXGroup;
 			children = (
-				827FCE3F26BCA9A7008EF24D /* HomeScene */,
+				827FCE3F26BCA9A7008EF24D /* Home */,
 				827FCE3C26BCA7F9008EF24D /* Coordinator */,
-				827FCE0026BB7469008EF24D /* ListScene */,
+				827FCE0026BB7469008EF24D /* List */,
 				827FCDFF26BB7402008EF24D /* App */,
 				827FCDFC26BB666D008EF24D /* Core */,
 				827FCDF426BB5903008EF24D /* Network */,
@@ -319,7 +319,7 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		827FCE0026BB7469008EF24D /* ListScene */ = {
+		827FCE0026BB7469008EF24D /* List */ = {
 			isa = PBXGroup;
 			children = (
 				827FCE3526BC2E25008EF24D /* View */,
@@ -331,7 +331,7 @@
 				827FCE1C26BB867D008EF24D /* Worker */,
 				827FCE1126BB810E008EF24D /* Model */,
 			);
-			path = ListScene;
+			path = List;
 			sourceTree = "<group>";
 		};
 		827FCE0826BB80FB008EF24D /* ChallengeMobileTests */ = {
@@ -459,7 +459,7 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		827FCE3F26BCA9A7008EF24D /* HomeScene */ = {
+		827FCE3F26BCA9A7008EF24D /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				82A4181926C241B00019000A /* Validator */,
@@ -473,7 +473,7 @@
 				827FCE4726BCB588008EF24D /* ViewController */,
 				827FCE4626BCB581008EF24D /* Composition */,
 			);
-			path = HomeScene;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		827FCE4626BCB581008EF24D /* Composition */ = {
