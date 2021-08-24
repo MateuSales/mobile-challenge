@@ -17,6 +17,7 @@
 		6095D55026D46A57008218A2 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6095D54F26D46A57008218A2 /* HomePresenterTests.swift */; };
 		6095D55326D46CA5008218A2 /* HomeDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6095D55226D46CA5008218A2 /* HomeDataSourceTests.swift */; };
 		6095D55526D47458008218A2 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6095D55426D47458008218A2 /* HomeViewControllerTests.swift */; };
+		6095D55926D4773F008218A2 /* CurrencyButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6095D55826D4773F008218A2 /* CurrencyButtonTests.swift */; };
 		827FCDE126BB58F7008EF24D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827FCDE026BB58F7008EF24D /* AppDelegate.swift */; };
 		827FCDE326BB58F7008EF24D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827FCDE226BB58F7008EF24D /* SceneDelegate.swift */; };
 		827FCDE526BB58F7008EF24D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827FCDE426BB58F7008EF24D /* ListViewController.swift */; };
@@ -83,6 +84,7 @@
 		6095D54F26D46A57008218A2 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 		6095D55226D46CA5008218A2 /* HomeDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSourceTests.swift; sourceTree = "<group>"; };
 		6095D55426D47458008218A2 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
+		6095D55826D4773F008218A2 /* CurrencyButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyButtonTests.swift; sourceTree = "<group>"; };
 		827FCDDD26BB58F7008EF24D /* ChallengeMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		827FCDE026BB58F7008EF24D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		827FCDE226BB58F7008EF24D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		6095D54426CDDFA3008218A2 /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
+				6095D55726D47727008218A2 /* View */,
 				6095D55626D47468008218A2 /* ViewController */,
 				6095D55126D46C99008218A2 /* DataSource */,
 				6095D54E26D46A4D008218A2 /* Presenter */,
@@ -241,6 +244,14 @@
 				6095D55426D47458008218A2 /* HomeViewControllerTests.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6095D55726D47727008218A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6095D55826D4773F008218A2 /* CurrencyButtonTests.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		827FCDD426BB58F7008EF24D = {
@@ -713,6 +724,7 @@
 				6095D53D26CCAE31008218A2 /* ListPresenterTests.swift in Sources */,
 				827FCE2E26BBC498008EF24D /* ListViewControllerTests.swift in Sources */,
 				827FCE2B26BBC329008EF24D /* APITests.swift in Sources */,
+				6095D55926D4773F008218A2 /* CurrencyButtonTests.swift in Sources */,
 				6095D55326D46CA5008218A2 /* HomeDataSourceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
