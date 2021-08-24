@@ -19,6 +19,21 @@ class HomeDataSourceTests: XCTestCase {
         XCTAssertEqual(heightOfRow, 500)
     }
     
+    func test_tableviewCellForRowAt_rendersCellCorrectly() {
+        let viewModel = someViewModel()
+        let (sut, _) = makeSUT(viewModel: viewModel)
+        
+        let cell = sut.tableView(dummyTableview(), cellForRowAt: IndexPath(row: 0, section: 0)) as? HomeCell
+        
+        XCTAssertNotNil(cell)
+        XCTAssertEqual(cell?.firstButton.title(for: .normal), viewModel.firstButtonTitle)
+        XCTAssertEqual(cell?.secondButton.title(for: .normal), viewModel.secondButtonTitle)
+        XCTAssertEqual(cell?.valueTextField.text, viewModel.valueInDolar)
+        XCTAssertEqual(cell?.descriptionLabel.text, viewModel.description)
+        XCTAssertEqual(cell?.valueLabel.text, viewModel.value)
+        XCTAssertEqual(cell?.calculateButton.title(for: .normal), viewModel.buttonTitle)
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(viewModel: HomeViewModel) -> (sut: HomeDataSource, DelegteSpy) {
@@ -49,7 +64,7 @@ class HomeDataSourceTests: XCTestCase {
     private func someViewModel() -> HomeViewModel {
         return .init(firstButtonTitle: "Titulo",
                      secondButtonTitle: nil,
-                     valueInDolar: nil,
+                     valueInDolar: "10",
                      description: nil,
                      value: "950.00",
                      buttonTitle: "Calcular")
